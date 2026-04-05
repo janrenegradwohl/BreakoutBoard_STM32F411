@@ -1,4 +1,4 @@
-27224342335519633
+27233219387774129
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -98665,6 +98665,13 @@ LED
 4
 4
 SamacSys_Parts
+AbraconASDDV
+AbraconASDDV
+Crystal or Oscillator
+0
+4
+4
+SamacSys_Parts
 COM16347
 COM-16347-8
 LED
@@ -98672,12 +98679,40 @@ LED
 4
 4
 SamacSys_Parts
+GSB1C41110SSHR
+GSB1C41110SSHR-1
+Connector
+0
+16
+16
+SamacSys_Parts
 NE555DR
 D (R-PDSO-G8)
 Integrated Circuit
 0
 8
 8
+SamacSys_Parts
+QFN50P700X700X65-49N-D
+STM32F411CCU6TR-1
+Integrated Circuit
+0
+49
+49
+SamacSys_Parts
+SOT65P210X110-5N
+DCK(R-PDSO-G5)
+Integrated Circuit
+0
+5
+5
+SamacSys_Parts
+SOT95P280X145-5N
+sot-23
+Integrated Circuit
+0
+5
+5
 Sensor
 ASAIR_AM2302_P2.54mm_Lead2.75mm_TabDown
 Temperature and humidity module, http://akizukidenshi.com/download/ds/aosong/AM2302.pdf
