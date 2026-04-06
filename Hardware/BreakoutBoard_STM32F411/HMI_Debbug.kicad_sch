@@ -984,30 +984,30 @@
 	)
 	(symbol
 		(lib_id "Device:LED")
-		(at 59.69 71.12 90)
+		(at 59.69 71.12 270)
+		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "1b1c9d76-5244-4eb8-8e6b-d8735dae6795")
 		(property "Reference" "D301"
-			(at 57.15 73.9776 90)
+			(at 55.88 71.4374 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 			)
 		)
-		(property "Value" "LED"
-			(at 57.15 71.4376 90)
+		(property "Value" "3.3V"
+			(at 55.88 73.9774 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 			)
 		)
 		(property "Footprint" "LED_SMD:LED_0603_1608Metric"
@@ -1338,21 +1338,21 @@
 		(fields_autoplaced yes)
 		(uuid "fa2682e7-7c3b-433b-9f55-f138ba533c6d")
 		(property "Reference" "D302"
-			(at 69.85 73.9776 90)
+			(at 76.2 71.4374 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 			)
 		)
-		(property "Value" "LED"
-			(at 69.85 71.4376 90)
+		(property "Value" "5V"
+			(at 76.2 73.9774 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 			)
 		)
 		(property "Footprint" "LED_SMD:LED_0603_1608Metric"
