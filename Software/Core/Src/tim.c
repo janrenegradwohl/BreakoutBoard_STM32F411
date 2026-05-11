@@ -68,7 +68,7 @@ void MX_TIM2_Init(void)
     Error_Handler();
   }
   sConfigOC.OCMode = TIM_OCMODE_PWM1;
-  sConfigOC.Pulse = 38;
+  sConfigOC.Pulse = 0;
   sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
   sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
   if (HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_1) != HAL_OK)
@@ -100,8 +100,8 @@ void HAL_TIM_Base_MspInit(TIM_HandleTypeDef* tim_baseHandle)
     hdma_tim2_ch1.Init.Direction = DMA_MEMORY_TO_PERIPH;
     hdma_tim2_ch1.Init.PeriphInc = DMA_PINC_DISABLE;
     hdma_tim2_ch1.Init.MemInc = DMA_MINC_ENABLE;
-    hdma_tim2_ch1.Init.PeriphDataAlignment = DMA_PDATAALIGN_WORD;
-    hdma_tim2_ch1.Init.MemDataAlignment = DMA_MDATAALIGN_WORD;
+    hdma_tim2_ch1.Init.PeriphDataAlignment = DMA_PDATAALIGN_HALFWORD;
+    hdma_tim2_ch1.Init.MemDataAlignment = DMA_MDATAALIGN_HALFWORD;
     hdma_tim2_ch1.Init.Mode = DMA_NORMAL;
     hdma_tim2_ch1.Init.Priority = DMA_PRIORITY_LOW;
     hdma_tim2_ch1.Init.FIFOMode = DMA_FIFOMODE_DISABLE;
@@ -129,9 +129,9 @@ void HAL_TIM_MspPostInit(TIM_HandleTypeDef* timHandle)
 
     __HAL_RCC_GPIOA_CLK_ENABLE();
     /**TIM2 GPIO Configuration
-    PA15     ------> TIM2_CH1
+    PA5     ------> TIM2_CH1
     */
-    GPIO_InitStruct.Pin = GPIO_PIN_15;
+    GPIO_InitStruct.Pin = GPIO_PIN_5;
     GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
     GPIO_InitStruct.Pull = GPIO_NOPULL;
     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
