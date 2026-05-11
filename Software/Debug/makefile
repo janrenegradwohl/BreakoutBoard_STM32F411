@@ -34,34 +34,34 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-BUILD_ARTIFACT_NAME := BreakoutBoard_STM32F411
+BUILD_ARTIFACT_NAME := STM32F411_BreakoutBoard
 BUILD_ARTIFACT_EXTENSION := elf
 BUILD_ARTIFACT_PREFIX :=
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-BreakoutBoard_STM32F411.elf \
+STM32F411_BreakoutBoard.elf \
 
 MAP_FILES += \
-BreakoutBoard_STM32F411.map \
+STM32F411_BreakoutBoard.map \
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-BreakoutBoard_STM32F411.list \
+STM32F411_BreakoutBoard.list \
 
 
 # All Target
 all: main-build
 
 # Main-build Target
-main-build: BreakoutBoard_STM32F411.elf secondary-outputs
+main-build: STM32F411_BreakoutBoard.elf secondary-outputs
 
 # Tool invocations
-BreakoutBoard_STM32F411.elf BreakoutBoard_STM32F411.map: $(OBJS) $(USER_OBJS) C:\Users\Jan\Desktop\data\projects\BreakoutBoard_STM32F411\Software\STM32F411CCUX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "BreakoutBoard_STM32F411.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\Jan\Desktop\data\projects\BreakoutBoard_STM32F411\Software\STM32F411CCUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="BreakoutBoard_STM32F411.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+STM32F411_BreakoutBoard.elf STM32F411_BreakoutBoard.map: $(OBJS) $(USER_OBJS) C:\Users\Jan\Desktop\data\projects\BreakoutBoard_STM32F411\Software\STM32F411CCUX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "STM32F411_BreakoutBoard.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\Jan\Desktop\data\projects\BreakoutBoard_STM32F411\Software\STM32F411CCUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F411_BreakoutBoard.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -70,14 +70,14 @@ default.size.stdout: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-BreakoutBoard_STM32F411.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "BreakoutBoard_STM32F411.list"
+STM32F411_BreakoutBoard.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "STM32F411_BreakoutBoard.list"
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) BreakoutBoard_STM32F411.elf BreakoutBoard_STM32F411.list BreakoutBoard_STM32F411.map default.size.stdout
+	-$(RM) STM32F411_BreakoutBoard.elf STM32F411_BreakoutBoard.list STM32F411_BreakoutBoard.map default.size.stdout
 	-@echo ' '
 
 secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST)
