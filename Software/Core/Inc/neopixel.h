@@ -21,10 +21,7 @@ typedef struct
 
 void Neopixel_Init(TIM_HandleTypeDef *htim);
 
-void Neopixel_SetPixel(uint16_t index,
-                        uint8_t red,
-                        uint8_t green,
-                        uint8_t blue);
+void Neopixel_SetPixel(uint16_t index, uint8_t red, uint8_t green, uint8_t blue);
 
 void Neopixel_Clear(void);
 

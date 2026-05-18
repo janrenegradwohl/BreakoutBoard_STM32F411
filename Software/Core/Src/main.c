@@ -36,7 +36,10 @@
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 #define PWM_HIGH 79
-#define PWM_LOW  39
+#define PWM_LOW  33
+uint32_t buffer[24] = {	PWM_LOW, PWM_LOW, PWM_LOW, PWM_LOW, PWM_LOW, PWM_LOW, PWM_LOW, PWM_LOW,
+						PWM_LOW, PWM_LOW, PWM_LOW, PWM_LOW, PWM_LOW, PWM_LOW, PWM_LOW, PWM_LOW,
+						PWM_LOW, PWM_LOW, PWM_LOW, PWM_HIGH, PWM_LOW, PWM_LOW, PWM_LOW, PWM_LOW};
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -100,13 +103,13 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-	Neopixel_SetPixel(0, 255, 0, 0); // Rot
-	Neopixel_SetPixel(1, 0, 255, 0); // Grün
-	Neopixel_SetPixel(2, 0, 0, 255); // Blau
+	//Neopixel_SetPixel(0, 255, 0, 0); // Rot
+	//Neopixel_SetPixel(2, 0, 0, 255); // Blau
 	while (1) {
         //now = uwTick;
-		Neopixel_Show();
-		HAL_Delay(1000);
+		//Neopixel_Show();
+		HAL_TIM_PWM_Start_DMA(&htim2, TIM_CHANNEL_1, (uint32_t*) buffer, 24);
+		HAL_Delay(50);
 
     /* USER CODE END WHILE */
 
